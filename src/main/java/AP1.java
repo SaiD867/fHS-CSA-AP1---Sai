@@ -220,13 +220,13 @@ arrarr[in] = nums[i];
       int score = 0;  
       for (int i = 0; i < key.length; i++) {  
         if (!answers[i].equals("?")) {  
-          score -= 1;    
-        } else if (answers[i].equals(key[i])) {  
-          score += 4;   
+          if (answers[i].equals(key[i])) {
+            score += 4;
+        } else {
+            score -= 1;
         }  
-      }  
-      return score;  
-   }  
+      } 
+   } return score;   }
   
    /**  
     * Given an array of strings, return a new array without the strings that are equal to the target string.  
@@ -242,7 +242,7 @@ arrarr[in] = nums[i];
       int oompalompa = 0;  
       for (int i=0;i<words.length;i++ ) {  
         if (!wordz.equals(target)) {  
-           wordz[i] = words[i];  
+           wordz[oompalompa] = words[i];  
            oompalompa++;  
         }  
       }  
@@ -301,7 +301,7 @@ arrarr[in] = nums[i];
     */  
    public int bigHeights(int[] heights, int start, int end) {  
       int count = 0;  
-      for (int i = start; i < end; i++) {  
+      for (int i = start; i < end-1; i++) {  
         if (Math.abs(heights[i] - heights[i + 1]) >= 5) {  
            count++;  
         }  
@@ -315,13 +315,18 @@ arrarr[in] = nums[i];
     * if the names are the same.  
     */  
   public int userCompare(String aName, int aId, String bName, int bId) {
-    int nameCompare = aName.compareTo(bName);
-    if (!(nameCompare == 0)) {
-        return nameCompare; 
+ if(aName.compareTo(bName) < 0) {
+        return -1;
+    } else if(aName.compareTo(bName) > 0) {
+        return 1;
+    } else if(aId > bId) {
+        return 1;
+    } else if(aId < bId) {
+        return -1;
     }
-    
-    return Integer.compare(aId, bId);
-} 
+    else{          
+    return 0;}
+}
   
    /**  
     * Start with two arrays of strings, A and B, each with its elements in alphabetical order and without duplicates.  
