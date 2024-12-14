@@ -204,9 +204,11 @@ arrarr[in] = nums[i];
    public int matchUp(String[] a, String[] b) {  
       int count = 0;  
       for (int i = 0; i < a.length; i++) {  
-        if (a[i].substring(0, 1).equals(b[i].substring(0, 1)) && a[i].length() >= 1 && b[i].length() >= 1) {  
+        if (a[i].length() >= 1 && b[i].length() >= 1) { 
+             if (a[i].substring(0, 1).equals(b[i].substring(0, 1)))
+                 {
            count++;  
-        }  
+        }  }
       }  
       return count;  
    }  
@@ -301,7 +303,7 @@ arrarr[in] = nums[i];
     */  
    public int bigHeights(int[] heights, int start, int end) {  
       int count = 0;  
-      for (int i = start; i < end-1; i++) {  
+      for (int i = start; i < end - 1; i++) {  
         if (Math.abs(heights[i] - heights[i + 1]) >= 5) {  
            count++;  
         }  
