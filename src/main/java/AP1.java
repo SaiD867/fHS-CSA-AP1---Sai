@@ -1,7 +1,7 @@
 package src.main.java;
 
 public class AP1 {
-
+//I looked up a bunch of functions like .compare and .compare to to make this eseair
     /**
      * Given an array of scores, return true if each score is equal or greater
      * than the one before.
