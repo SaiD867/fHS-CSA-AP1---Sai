@@ -109,11 +109,11 @@ public class AP1 {
      */
     
     public java.util.ArrayList<String> wordsWithoutList(String[] words, int len) {
-    ArrayList<String> ship = new ArrayList<>();
+        /*ArrayList<String> ship = new ArrayList<>();
         for(int i = len-1; i < words.length; i++)
         { if (!(words[i].length() ==len))
-            ship.add(words[i]);}
-        return ship;
+            ship.add(words[i]);}*/
+        return new java.util.ArrayList<>();
     }
 
     /**
@@ -121,7 +121,7 @@ public class AP1 {
      */
     public boolean hasOne(int n) {
         {
-          while (!(n!=10 || n%10==0))
+          while (!(n !=10 && n<10))
           {
             if(n%10 == 1)
             {return true;}
@@ -204,7 +204,7 @@ arrarr[in] = nums[i];
    public int matchUp(String[] a, String[] b) {  
       int count = 0;  
       for (int i = 0; i < a.length; i++) {  
-        if (a[i].substring(0, 1).equals(b[i].substring(0, 1)) && a[i].length() => 1 && b[i].length() => 1) {  
+        if (a[i].substring(0, 1).equals(b[i].substring(0, 1)) && a[i].length() >= 1 && b[i].length() >= 1) {  
            count++;  
         }  
       }  
@@ -222,7 +222,7 @@ arrarr[in] = nums[i];
         if (!answers[i].equals("?")) {  
           score -= 1;    
         } else if (answers[i].equals(key[i])) {  
-          score += 4;   score -= 1;  
+          score += 4;   
         }  
       }  
       return score;  
