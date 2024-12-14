@@ -109,10 +109,10 @@ public class AP1 {
      */
     
     public java.util.ArrayList<String> wordsWithoutList(String[] words, int len) {
-        /*ArrayList<String> ship = new ArrayList<>();
+        java.util.ArrayList<String> ship = new java.util.ArrayList<String>();
         for(int i = len-1; i < words.length; i++)
-        { if (!(words[i].length() ==len))
-            ship.add(words[i]);}*/
+        { if (!(words[i].length() == len))
+            ship.add(words[i]);}
         return new java.util.ArrayList<>();
     }
 
@@ -302,7 +302,7 @@ arrarr[in] = nums[i];
     */  
    public int bigHeights(int[] heights, int start, int end) {  
       int count = 0;  
-      for (int i = start; i < end - 1; i++) {  
+      for (int i = start; i < end; i++) {  
         if (Math.abs(heights[i] - heights[i + 1]) >= 5) {  
            count++;  
         }  
