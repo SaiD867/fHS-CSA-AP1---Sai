@@ -44,7 +44,7 @@ public class AP1 {
      */
     public boolean scoresClump(int[] scores) {
 
-        for (int i = 1; i < scores.length-2; i++) 
+        for (int i = 0; i < scores.length-2; i++) 
         {
             if (scores[i] - scores[i+2] <= 2 && scores[i] - scores[i+2] >= -2 && scores[i] - scores[i+1] <= 2 && scores[i] - scores[i+1] >= -2) 
             {return true;}}
