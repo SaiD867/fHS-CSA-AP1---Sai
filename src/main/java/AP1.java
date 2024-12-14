@@ -204,11 +204,10 @@ arrarr[in] = nums[i];
    public int matchUp(String[] a, String[] b) {  
       int count = 0;  
       for (int i = 0; i < a.length; i++) {  
-        if (a[i].length() >= 1 && b[i].length() >= 1) { 
-             if (a[i].substring(0, 1).equals(b[i].substring(0, 1)))
+        if (a[i].length() > 0 && b[i].length() > 0 && a[i].charAt(0) == b[i].charAt(0))
                  {
            count++;  
-        }  }
+        } 
       }  
       return count;  
    }  
@@ -243,7 +242,7 @@ arrarr[in] = nums[i];
       String[] wordz = new String[count];  
       int oompalompa = 0;  
       for (int i=0;i<words.length;i++ ) {  
-        if (!wordz.equals(target)) {  
+        if (!words[i].equals(target)) {  
            wordz[oompalompa] = words[i];  
            oompalompa++;  
         }  
