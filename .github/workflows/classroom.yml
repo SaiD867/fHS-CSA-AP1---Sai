@@ -1,0 +1,256 @@
+name: Autograding Tests
+'on':
+  - push
+  - repository_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Test step template for each CodingBat problem
+    - name: scoresIncreasingTest
+      id: scoresIncreasingTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scoresIncreasingTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.scoresIncreasingTest
+        timeout: 10
+        max-score: 2
+
+    - name: scores100Test
+      id: scores100Test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scores100Test
+        setup-command: ''
+        command: gradle test --tests AP1Test.scores100Test
+        timeout: 10
+        max-score: 2
+
+    - name: scoresClumpTest
+      id: scoresClumpTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scoresClumpTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.scoresClumpTest
+        timeout: 10
+        max-score: 2
+
+    - name: scoresAverageTest
+      id: scoresAverageTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scoresAverageTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.scoresAverageTest
+        timeout: 10
+        max-score: 2
+
+    - name: wordsCountTest
+      id: wordsCountTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: wordsCountTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.wordsCountTest
+        timeout: 10
+        max-score: 2
+
+    - name: wordsFrontTest
+      id: wordsFrontTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: wordsFrontTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.wordsFrontTest
+        timeout: 10
+        max-score: 2
+
+    - name: wordsWithoutListTest
+      id: wordsWithoutListTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: wordsWithoutListTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.wordsWithoutListTest
+        timeout: 10
+        max-score: 2
+
+    - name: hasOneTest
+      id: hasOneTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: hasOneTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.hasOneTest
+        timeout: 10
+        max-score: 2
+
+    - name: dividesSelfTest
+      id: dividesSelfTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: dividesSelfTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.dividesSelfTest
+        timeout: 10
+        max-score: 2
+
+    - name: copyEvensTest
+      id: copyEvensTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: copyEvensTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.copyEvensTest
+        timeout: 10
+        max-score: 2
+
+    - name: copyEndyTest
+      id: copyEndyTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: copyEndyTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.copyEndyTest
+        timeout: 10
+        max-score: 2
+
+    - name: matchUpTest
+      id: matchUpTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: matchUpTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.matchUpTest
+        timeout: 10
+        max-score: 2
+
+    - name: scoreUpTest
+      id: scoreUpTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scoreUpTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.scoreUpTest
+        timeout: 10
+        max-score: 2
+
+    - name: wordsWithoutTest
+      id: wordsWithoutTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: wordsWithoutTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.wordsWithoutTest
+        timeout: 10
+        max-score: 2
+
+    - name: scoresSpecialTest
+      id: scoresSpecialTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scoresSpecialTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.scoresSpecialTest
+        timeout: 10
+        max-score: 2
+
+    - name: sumHeightsTest
+      id: sumHeightsTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: sumHeightsTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.sumHeightsTest
+        timeout: 10
+        max-score: 2
+
+    - name: sumHeights2Test
+      id: sumHeights2Test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: sumHeights2Test
+        setup-command: ''
+        command: gradle test --tests AP1Test.sumHeights2Test
+        timeout: 10
+        max-score: 2
+
+    - name: bigHeightsTest
+      id: bigHeightsTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: bigHeightsTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.bigHeightsTest
+        timeout: 10
+        max-score: 2
+
+    - name: userCompareTest
+      id: userCompareTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: userCompareTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.userCompareTest
+        timeout: 10
+        max-score: 2
+
+    - name: mergeTwoTest
+      id: mergeTwoTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: mergeTwoTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.mergeTwoTest
+        timeout: 10
+        max-score: 2
+
+    - name: commonTwoTest
+      id: commonTwoTest
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: commonTwoTest
+        setup-command: ''
+        command: gradle test --tests AP1Test.commonTwoTest
+        timeout: 10
+        max-score: 2
+
+    # Autograding Reporter
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        SCORESINCREASINGTEST_RESULTS: "${{steps.scoresIncreasingTest.outputs.result}}"
+        SCORES100TEST_RESULTS: "${{steps.scores100Test.outputs.result}}"
+        SCORESCLUMPTEST_RESULTS: "${{steps.scoresClumpTest.outputs.result}}"
+        SCORESAVERAGETEST_RESULTS: "${{steps.scoresAverageTest.outputs.result}}"
+        WORDSCOUNTTEST_RESULTS: "${{steps.wordsCountTest.outputs.result}}"
+        WORDSFRONTTEST_RESULTS: "${{steps.wordsFrontTest.outputs.result}}"
+        WORDSWITHOUTLISTTEST_RESULTS: "${{steps.wordsWithoutListTest.outputs.result}}"
+        HASONETEST_RESULTS: "${{steps.hasOneTest.outputs.result}}"
+        DIVIDESSELFTEST_RESULTS: "${{steps.dividesSelfTest.outputs.result}}"
+        COPYEVENSTEST_RESULTS: "${{steps.copyEvensTest.outputs.result}}"
+        COPYENDYTEST_RESULTS: "${{steps.copyEndyTest.outputs.result}}"
+        MATCHUPTEST_RESULTS: "${{steps.matchUpTest.outputs.result}}"
+        SCOREUPTEST_RESULTS: "${{steps.scoreUpTest.outputs.result}}"
+        WORDSWITHOUTTEST_RESULTS: "${{steps.wordsWithoutTest.outputs.result}}"
+        SCORESSPECIALTEST_RESULTS: "${{steps.scoresSpecialTest.outputs.result}}"
+        SUMHEIGHTSTEST_RESULTS: "${{steps.sumHeightsTest.outputs.result}}"
+        SUMHEIGHTS2TEST_RESULTS: "${{steps.sumHeights2Test.outputs.result}}"
+        BIGHEIGHTSTEST_RESULTS: "${{steps.bigHeightsTest.outputs.result}}"
+        USERCOMPARETEST_RESULTS: "${{steps.userCompareTest.outputs.result}}"
+        MERGETWOTEST_RESULTS: "${{steps.mergeTwoTest.outputs.result}}"
+        COMMONTWOTEST_RESULTS: "${{steps.commonTwoTest.outputs.result}}"
+      with:
+        runners: scoresIncreasingTest, scores100Test, scoresClumpTest, scoresAverageTest, wordsCountTest, wordsFrontTest, wordsWithoutListTest, hasOneTest, dividesSelfTest, copyEvensTest, copyEndyTest, matchUpTest, scoreUpTest, wordsWithoutTest, scoresSpecialTest, sumHeightsTest, sumHeights2Test, bigHeightsTest, userCompareTest, mergeTwoTest, commonTwoTest
