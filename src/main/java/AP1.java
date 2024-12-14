@@ -26,7 +26,7 @@ public class AP1 {
     public boolean scores100(int[] scores) {
         boolean val = false;
         boolean val2 = false;
-        for (int i = 1; i < scores.length; i++) 
+        for (int i = 1; i < scores.length-1; i++) 
         {
             if (scores[i] == 100 && scores[i + 1] == 100)
             {
@@ -44,9 +44,9 @@ public class AP1 {
      */
     public boolean scoresClump(int[] scores) {
 
-        for (int i = 1; i < scores.length; i++) 
+        for (int i = 1; i < scores.length-2; i++) 
         {
-            if (scores[i] - scores[i-1] <= 2 && scores[i] - scores[i-1] >= -2 && scores[i] - scores[i+1] <= 2 && scores[i] - scores[i+1] >= -2) 
+            if (scores[i] - scores[i+2] <= 2 && scores[i] - scores[i+2] >= -2 && scores[i] - scores[i+1] <= 2 && scores[i] - scores[i+1] >= -2) 
             {return true;}}
 
         return false;
@@ -98,7 +98,7 @@ public class AP1 {
     public String[] wordsFront(String[] words, int n) {
         String[] pirate = new String[n];
 
-        for(int i = 0; i < n-1; i++)// praneeth do.length name array here
+        for(int i = 0; i <= n-1; i++)
             pirate[i] = pirate[i];
 
         return pirate;
@@ -109,10 +109,11 @@ public class AP1 {
      */
     
     public java.util.ArrayList<String> wordsWithoutList(String[] words, int len) {
-    /*ArrayList<String> ship = new ArrayList<>();
+    ArrayList<String> ship = new ArrayList<>();
         for(int i = len-1; i < words.length; i++)
-        {ship.add(words[i]);}*/
-        return new java.util.ArrayList<>();
+        { if (!(words[i].length() ==len))
+            ship.add(words[i]);}
+        return ship;
     }
 
     /**
@@ -124,7 +125,7 @@ public class AP1 {
           {
             if(n%10 == 1)
             {return true;}
-            else{n/=10;}
+            n/=10;
           } 
           return false; 
         }
@@ -203,7 +204,7 @@ arrarr[in] = nums[i];
    public int matchUp(String[] a, String[] b) {  
       int count = 0;  
       for (int i = 0; i < a.length; i++) {  
-        if (!(a[i].isEmpty() && b[i].isEmpty()) && a[i].charAt(0) == b[i].charAt(0)) {  
+        if (a[i].substring(0, 1).equals(b[i].substring(0, 1)) && a[i].length() => 1 && b[i].length() => 1) {  
            count++;  
         }  
       }  
