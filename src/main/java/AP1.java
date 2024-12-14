@@ -121,7 +121,7 @@ public class AP1 {
      */
     public boolean hasOne(int n) {
         {
-          while (!( n<0))
+          while (( n>0))
           {
             if(n%10 == 1)
             {return true;}
