@@ -99,7 +99,7 @@ public class AP1 {
         String[] pirate = new String[n];
 
         for(int i = 0; i <= n-1; i++)
-            pirate[i] = pirate[i];
+            pirate[i] = words[i];
 
         return pirate;
     }
@@ -121,7 +121,7 @@ public class AP1 {
      */
     public boolean hasOne(int n) {
         {
-          while (!(n !=10 && n<10))
+          while (!(n !=10 && n<0))
           {
             if(n%10 == 1)
             {return true;}
